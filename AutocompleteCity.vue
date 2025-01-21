@@ -37,9 +37,9 @@ function enterCity(e) {
   // Ignoring everything after the first comma:
   enteredCity.value = enteredCity.value.trim().replace(/,.*/, '').toLowerCase()
 
-  for (let city of autocompleteCityNames.cities) {
+  for (const city of autocompleteCityNames.cities) {
     if (city[0].toLowerCase().startsWith(enteredCity.value)) {
-      let parts = [city[0]]
+      const parts = [city[0]]
 
       /* If the city is in a region, we'll add it. Not every city in
       the data belongs to a region. */
@@ -59,7 +59,7 @@ function enterCity(e) {
 the best way to detect when the user has selected a city is to use
 the "change" event on the <input> element: */
 function chooseCity() {
-  for (let option of dataListOptions.value) {
+  for (const option of dataListOptions.value) {
     if (enteredCity.value === option.longName) {
       emit('selectCity', {
         name: option[0],

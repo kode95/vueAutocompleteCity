@@ -1,6 +1,6 @@
 # vueAutocompleteCity
 
-Vue component that autocompletes city names as the user types ahead.
+Vue 3 component that autocompletes city names as the user types ahead.
 
 <img src="screenshot.png" width="272" height="178" alt="Screenshot" />
 
@@ -40,6 +40,25 @@ function selectCity(city) {
 
 <script setup>
 // No import needed; Nuxt auto-imports it.
+
+function selectCity(city) {
+  console.log(city)
+}
+</script>
+```
+
+### Ionic Vue
+
+1. Move AutocompleteCity.vue into src/components.
+1. Create the directory *src/assets* if it doesn't exist, and move autocompleteCityNames.js into that directory.
+1. In a view, use the component like this:
+```html
+<template>
+  <AutocompleteCity @select-city="selectCity" city-name="Default city name" />
+</template>
+
+<script setup>
+import AutocompleteCity from '@/components/AutocompleteCity.vue'
 
 function selectCity(city) {
   console.log(city)
