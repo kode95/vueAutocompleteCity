@@ -5,6 +5,7 @@
     @change="chooseCity"
     list="data-list"
     autocomplete="off"
+    :placeholder="placeholder"
   />
   <datalist id="data-list">
     <option v-for="(option, key) in dataListOptions" :key="key" :value="option.longName"></option>
@@ -15,7 +16,10 @@
 import { ref } from 'vue'
 import autocompleteCityNames from '@/assets/autocompleteCityNames'
 
-const props = defineProps({ cityName: String })
+const props = defineProps({
+  cityName: String,
+  placeholder: String
+})
 const emit = defineEmits(['selectCity'])
 
 const enteredCity = ref(props.cityName || '')
