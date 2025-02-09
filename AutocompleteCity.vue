@@ -39,7 +39,7 @@ function enterCity(e) {
 
   dataListOptions.value = [];
   // Ignoring everything after the first comma:
-  enteredCity.value = enteredCity.value.trim().replace(/,.*/, '').toLowerCase()
+  enteredCity.value = enteredCity.value.replace(/,.*/, '').toLowerCase()
 
   for (const city of autocompleteCityNames.cities) {
     if (city[0].toLowerCase().startsWith(enteredCity.value)) {
